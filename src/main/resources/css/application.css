@@ -1,0 +1,24 @@
+.root {
+  -fx-background-color: #111;
+}
+
+.jfx-button {
+  -fx-text-fill: WHITE;
+  -fx-min-width: 45px;
+  -fx-min-height: 45px;
+}
+
+.result {
+  -fx-text-fill: WHITE;
+  -fx-font-size: 25px;
+}
+
+.number {
+  -fx-background-color: #00d11e;
+  -fx-font-size:15px;
+}
+
+.symbol {
+  -fx-background-color: #ff8421;
+  -fx-font-size:15px;
+}
