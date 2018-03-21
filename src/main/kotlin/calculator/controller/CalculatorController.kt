@@ -1,4 +1,6 @@
 package calculator.controller
+import  calculator.Operation
+
 import javafx.event.ActionEvent
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
@@ -34,7 +36,6 @@ class CalculatorController: View() {
     count.text = ""
     val text = e.getSource()
     if (text is JFXButton) {
-      println(text.getText())
       operation = text.getText()
     }
   }
@@ -42,18 +43,16 @@ class CalculatorController: View() {
   fun onCalculateClick() {
     if (count.text.isNullOrEmpty()) return
     when (operation) {
-      "+" -> {
+      Operation.plus -> {
         result += count.text.toInt()
       }
-      "-" -> {
+      Operation.minus -> {
         result -= count.text.toInt()
       }
-      "x" -> {
-        println("kakeru")
+      Operation.multiple -> {
         result *= count.text.toInt()
       }
-      "÷" -> {
-        println("waru")
+      Operation.divide -> {
         result /= count.text.toInt()
       }
     }
