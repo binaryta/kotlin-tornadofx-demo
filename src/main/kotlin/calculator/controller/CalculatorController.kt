@@ -10,6 +10,7 @@ import tornadofx.*
 
 class CalculatorController: View() {
   var result: Int =  0
+  var refresh: Boolean = false
   var operation: String = ""
   val count: Label by fxid()
   override val root: VBox by fxml("/Calculator.fxml")
@@ -24,6 +25,11 @@ class CalculatorController: View() {
 
   /* 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 */
   fun onNumberClick(e: ActionEvent) {
+    if (refresh) {
+      count.text = ""
+      refresh = false
+    }
+
     val text = e.getSource()
     if (text is JFXButton) count.text += text.getText()
   }
@@ -57,6 +63,7 @@ class CalculatorController: View() {
       }
     }
     count.text = result.toString()
+    refresh = true
   }
 
   fun onClearClick() {
