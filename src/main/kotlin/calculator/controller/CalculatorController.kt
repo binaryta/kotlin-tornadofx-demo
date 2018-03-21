@@ -8,6 +8,7 @@ import tornadofx.*
 
 class CalculatorController: View() {
   var result: Int =  0
+  var operation: String = ""
   val count: Label by fxid()
   override val root: VBox by fxml("/Calculator.fxml")
 
@@ -25,35 +26,37 @@ class CalculatorController: View() {
     if (text is JFXButton) count.text += text.getText()
   }
 
-  /* + */
-  fun onPlusClick() {
+  /* +, -, x, ÷  */
+  fun onOperationClick(e: ActionEvent) {
     if (count.text.isNullOrEmpty()) return
     result = count.text.toInt()
+
     count.text = ""
+    val text = e.getSource()
+    if (text is JFXButton) {
+      println(text.getText())
+      operation = text.getText()
+    }
   }
 
-  /* - */
-  fun onMinusClick() {
+  fun onCalculateClick() {
     if (count.text.isNullOrEmpty()) return
-    result = count.text.toInt()
-    count.text = ""
-  }
-
-  /* x */
-  fun onMultipliedClick() {
-    if (count.text.isNullOrEmpty()) return
-    count.text = (count.text.toInt() + 1).toString()
-  }
-
-  /* / */
-  fun onDivideClick() {
-    if (count.text.isNullOrEmpty()) return
-    count.text = (count.text.toInt() + 1).toString()
-  }
-
-  fun onCalculateClick(e: ActionEvent) {
-    if (count.text.isNullOrEmpty()) return
-    result += count.text.toInt()
+    when (operation) {
+      "+" -> {
+        result += count.text.toInt()
+      }
+      "-" -> {
+        result -= count.text.toInt()
+      }
+      "x" -> {
+        println("kakeru")
+        result *= count.text.toInt()
+      }
+      "÷" -> {
+        println("waru")
+        result /= count.text.toInt()
+      }
+    }
     count.text = result.toString()
   }
 

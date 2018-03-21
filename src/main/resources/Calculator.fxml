@@ -36,27 +36,27 @@
       <Label fx:id="count" style="-fx-text-fill: white"/>
     </HBox>
 
-    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="1" text="C"   onAction="#onClearClick" styleClass="symbol"/>
+    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="1" text="C"   onAction="#onClearClick"     styleClass="symbol"/>
     <JFXButton GridPane.columnIndex="1" GridPane.rowIndex="1" text="+/-" styleClass="symbol"/>
     <JFXButton GridPane.columnIndex="2" GridPane.rowIndex="1" text="％"  styleClass="symbol"/>
-    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="1" text="÷"   styleClass="symbol"/>
+    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="1" text="÷"   onAction="#onOperationClick" styleClass="symbol"/>
 
     <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="2" text="7" onAction="#onNumberClick"     styleClass="number"/>
     <JFXButton GridPane.columnIndex="1" GridPane.rowIndex="2" text="8" onAction="#onNumberClick"     styleClass="number"/>
     <JFXButton GridPane.columnIndex="2" GridPane.rowIndex="2" text="9" onAction="#onNumberClick"     styleClass="number"/>
-    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="2" text="x" onAction="#onMultipliedClick" styleClass="symbol"/>
+    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="2" text="x" onAction="#onOperationClick"  styleClass="symbol"/>
 
-    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="3" text="4" onAction="#onNumberClick" styleClass="number"/>
-    <JFXButton GridPane.columnIndex="1" GridPane.rowIndex="3" text="5" onAction="#onNumberClick" styleClass="number"/>
-    <JFXButton GridPane.columnIndex="2" GridPane.rowIndex="3" text="6" onAction="#onNumberClick" styleClass="number"/>
-    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="3" text="-" styleClass="symbol"/>
+    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="3" text="4" onAction="#onNumberClick"      styleClass="number"/>
+    <JFXButton GridPane.columnIndex="1" GridPane.rowIndex="3" text="5" onAction="#onNumberClick"      styleClass="number"/>
+    <JFXButton GridPane.columnIndex="2" GridPane.rowIndex="3" text="6" onAction="#onNumberClick"      styleClass="number"/>
+    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="3" text="-" onAction="#onOperationClick"   styleClass="symbol"/>
 
-    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="4" text="1" onAction="#onNumberClick" styleClass="number"/>
-    <JFXButton GridPane.columnIndex="1" GridPane.rowIndex="4" text="2" onAction="#onNumberClick" styleClass="number"/>
-    <JFXButton GridPane.columnIndex="2" GridPane.rowIndex="4" text="3" onAction="#onNumberClick" styleClass="number"/>
-    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="4" text="+" onAction="#onPlusClick"   styleClass="symbol"/>
+    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="4" text="1" onAction="#onNumberClick"      styleClass="number"/>
+    <JFXButton GridPane.columnIndex="1" GridPane.rowIndex="4" text="2" onAction="#onNumberClick"      styleClass="number"/>
+    <JFXButton GridPane.columnIndex="2" GridPane.rowIndex="4" text="3" onAction="#onNumberClick"      styleClass="number"/>
+    <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="4" text="+" onAction="#onOperationClick"   styleClass="symbol"/>
 
-    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="5" text="0" onAction="#onNumberClick" styleClass="number"/>
+    <JFXButton GridPane.columnIndex="0" GridPane.rowIndex="5" text="0" onAction="#onNumberClick"    styleClass="number"/>
     <JFXButton GridPane.columnIndex="2" GridPane.rowIndex="5" text="." styleClass="symbol"/>
     <JFXButton GridPane.columnIndex="3" GridPane.rowIndex="5" text="=" onAction="#onCalculateClick" styleClass="symbol"/>
   </GridPane>
