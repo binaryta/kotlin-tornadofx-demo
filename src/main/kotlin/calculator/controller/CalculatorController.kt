@@ -1,12 +1,11 @@
 package calculator.controller
 import  calculator.Operation
 
+import com.jfoenix.controls.JFXButton
 import javafx.event.ActionEvent
 import javafx.scene.control.Label
-import javafx.scene.control.TextField
-import javafx.scene.layout.*
-import com.jfoenix.controls.*
-import tornadofx.*
+import javafx.scene.layout.VBox
+import tornadofx.View
 
 class CalculatorController: View() {
   var result: Int =  0
