@@ -11,6 +11,7 @@ import tornadofx.*
 class CalculatorController: View() {
   var result: Int =  0
   var refresh: Boolean = false
+  var keepingNumber: Int = 0
   var operation: String = ""
   val count: Label by fxid()
   override val root: VBox by fxml("/Calculator.fxml")
@@ -31,13 +32,17 @@ class CalculatorController: View() {
     }
 
     val text = e.getSource()
-    if (text is JFXButton) count.text += text.getText()
+    if (text is JFXButton) {
+      count.text += text.getText()
+      keepingNumber = count.text.toInt()
+    }
   }
 
   /* +, -, x, ÷  */
   fun onOperationClick(e: ActionEvent) {
     if (count.text.isNullOrEmpty()) return
     result = count.text.toInt()
+    refresh = false
 
     count.text = ""
     val text = e.getSource()
@@ -50,16 +55,32 @@ class CalculatorController: View() {
     if (count.text.isNullOrEmpty()) return
     when (operation) {
       Operation.plus -> {
-        result += count.text.toInt()
+        if (refresh) {
+          result += keepingNumber
+        } else {
+          result += count.text.toInt()
+        }
       }
       Operation.minus -> {
-        result -= count.text.toInt()
+        if (refresh) {
+          result -= keepingNumber
+        } else {
+          result -= count.text.toInt()
+        }
       }
       Operation.multiple -> {
-        result *= count.text.toInt()
+        if (refresh) {
+          result *= keepingNumber
+        } else {
+          result *= count.text.toInt()
+        }
       }
       Operation.divide -> {
-        result /= count.text.toInt()
+        if (refresh) {
+          result /= keepingNumber
+        } else {
+          result /= count.text.toInt()
+        }
       }
     }
     count.text = result.toString()
